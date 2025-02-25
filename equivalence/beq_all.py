@@ -547,7 +547,6 @@ if __name__ == "__main__":
         engine_args = AsyncEngineArgs.from_cli_args(args)
         engine_args.disable_log_requests = True
         engine_args.enable_prefix_caching = True
-        import pdb; pdb.set_trace()
         engine = AsyncLLMEngine.from_engine_args(
             engine_args, usage_context=UsageContext.API_SERVER)
         
