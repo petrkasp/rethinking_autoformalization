@@ -140,8 +140,8 @@ python -m equivalence.id_match \
 |               | F+IF  | BM25       | 9.86%        | 6.95%           |
 |               | F+IF  | DR         | 27.91%       | 17.57%          |
 ### BM25
-- [🤗`purewhite42/rautoformalizer_gtra_deepseek`](https://huggingface.co/purewhite42/rautoformalizer_gtra_deepseek): w/ oracle dependency retrieval, SFTed from [🤗`deepseek-ai/deepseek-math-7b-base`](https://huggingface.co/deepseek-ai/deepseek-math-7b-base)
-- [🤗`purewhite42/rautoformalizer_gtra_internlm`](https://huggingface.co/purewhite42/rautoformalizer_gtra_internlm): w/ oracle dependency retrieval, SFTed from [🤗`internlm/internlm2-math-7b`](https://huggingface.co/internlm/internlm2-math-7b)
+- [🤗`purewhite42/bm25_f`](https://huggingface.co/purewhite42/bm25_f): BM25 dependency retriever whose inputs are formatted using only formal declarations, based on [Rank-BM25](https://github.com/dorianbrown/rank_bm25)
+- [🤗`purewhite42/bm25_f_if`](https://huggingface.co/purewhite42/bm25_f_if): BM25 dependency retriever whose inputs are formatted using both formal declarations and informal descriptions, based on [Rank-BM25](https://github.com/dorianbrown/rank_bm25)
 ```shell
 python -m retriever.retrieve_bm25 \
     --model_path /path/to/the/model \
@@ -149,8 +149,8 @@ python -m retriever.retrieve_bm25 \
     --eval_set ... # {proofnet, connf}
 ```
 ### Dense Retrieval
-- [🤗`purewhite42/dependency_retriever_f`](https://huggingface.co/purewhite42/dependency_retriever_f): Dependency retriever whose inputs are formatted using only formal declarations , SFTed from [🤗`BAAI/bge-m3`](https://huggingface.co/BAAI/bge-m3)
-- [🤗`purewhite42/dependency_retriever_f_if`](https://huggingface.co/purewhite42/dependency_retriever_f_if): w/ oracle dependency retrieval whose inputs are formatted using both formal declarations and informal descriptions, SFTed from [🤗`BAAI/bge-m3`](https://huggingface.co/BAAI/bge-m3)
+- [🤗`purewhite42/dependency_retriever_f`](https://huggingface.co/purewhite42/dependency_retriever_f): Dense dependency retriever whose inputs are formatted using only formal declarations, SFTed from [🤗`BAAI/bge-m3`](https://huggingface.co/BAAI/bge-m3)
+- [🤗`purewhite42/dependency_retriever_f_if`](https://huggingface.co/purewhite42/dependency_retriever_f_if): Dense dependency retriever whose inputs are formatted using both formal declarations and informal descriptions, SFTed from [🤗`BAAI/bge-m3`](https://huggingface.co/BAAI/bge-m3)
 ```shell
 python -m retriever.retrieve_dr \
     --model_path /path/to/the/model \
