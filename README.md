@@ -3,9 +3,11 @@ Official implementation for the paper:
 
 **[ICLR'25 Spotlight] Rethinking and Improving Autoformalization: Towards a Faithful Metric and a Dependency Retrieval-based Approach**
 
-Qi Liu, Xinhao Zheng, Xudong Lu, Qinxiang Cao, Junchi Yan* (* indicates Correspondence author)
+Qi Liu, Xinhao Zheng, Xudong Lu, Qinxiang Cao*, Junchi Yan*†
 
 Sch. of Computer Science & Sch. of Artificial Intelligence, Shanghai Jiao Tong University
+
+(*Equal correspondence. †Also affiliated with Shanghai Artificial Intelligence Laboratory.)
 
 [🤗Collection](https://huggingface.co/collections/purewhite42/rethinking-autoformalization-67bd7ed598805cb189f63e3d)
 [📃Paper](https://openreview.net/pdf?id=hUb2At2DsQ)
