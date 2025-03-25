@@ -7,6 +7,9 @@ import signal
 
 import pexpect
 
+from .constants import ident_pattern
+from .dataclasses import Environment
+
 
 class Spwan(pexpect.spawn):
     async def send_async(self, s):
@@ -137,3 +140,49 @@ def format_doc_only_if(p: Dict) -> str:
 
 def format_doc_only_f(p: Dict) -> str:
     return f'''Formal Declaration: {p['header'].replace('🔗<|PREMISE|>🔗', '')[:1536]}'''
+
+def replace_span(span: Tuple[int, int], replacement: str, input_string: str) -> str:
+    start, end = span
+    return input_string[:start] + replacement + input_string[end:]
+
+def post_process_statement(stmt: str, init_env: Environment, repl: 'REPL', full_name_to_id: Dict[str, int], opens: Optional[str]=None) -> Tuple[str, Set[int]]:
+    load_env = repl.run_cmd(
+        (
+            (opens or '') + '\n' + \
+            'set_option pp.fullNames true\n' + \
+            stmt
+        ),
+        #* By `set_option pp.fullNames true`, we can parse full names of formal statements from their proof states.
+        init_env)
+    assert isinstance(load_env, Environment) and not [m for m in load_env.messages if m.severity == 'error']
+    init_state = load_env.sorries[0]
+
+    context_vars: Set[str] = set()
+    parsed_dependencies: Set[int] = set()
+
+    telescopes, goal = init_state.goal.split('⊢ ')
+
+    for l in telescopes.splitlines() + [goal]:
+        if ':' in l:
+            split_pos = l.find(':')
+            var_names, var_type = l[:split_pos].split(), l[split_pos+1:]
+            context_vars.update(var_names)
+        else:
+            var_type = l
+
+        matches = list(ident_pattern.finditer(var_type))
+        for i in range(len(matches)-1):
+            assert matches[i].span()[0] < matches[i].span()[1] and matches[i].span()[1] <= matches[i+1].span()[0]
+
+        for match in reversed(matches):
+            if match.group() in context_vars:
+                continue
+            elif match.group() in full_name_to_id.keys():
+                parsed_dependencies.add(full_name_to_id[match.group()])
+
+    parsed_statement = 'example ' + '\n'.join(['(' + l + ')' for l in telescopes.splitlines()]) + '\n: ' + goal + '\n:= by sorry'
+    post_env = repl.run_cmd(parsed_statement, init_env)
+    assert isinstance(post_env, Environment) and not [m for m in post_env.messages if m.severity == 'error']
+    assert post_env.sorries[0].goal == init_state.goal
+
+    return parsed_statement, parsed_dependencies
