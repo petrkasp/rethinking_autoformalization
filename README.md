@@ -162,7 +162,7 @@ python -m retriever.retrieve_dr \
 ## Autoformalization
 |                       |     **Benchmark**    | **ProofNet** | **Con-NF** |
 |:---------------------:|:--------------------:|--------------|------------|
-| **InternLM2-Math 7B** | Rautoformalizer (-R) | 16.58%       | 4.58%      |
+| **InternLM2-Math-Base 7B** | Rautoformalizer (-R) | 16.58%       | 4.58%      |
 |                       | RAutoformalizer      | 18.18%       | 16.86%     |
 |                       | Rautoformalizer (+R) | 31.28%       | 55.36%     |
 | **DeepseekMath 7B**   | Rautoformalizer (-R) | 15.24%       | 4.27%      |
@@ -170,7 +170,7 @@ python -m retriever.retrieve_dr \
 |                       | Rautoformalizer (+R) | 32.62%       | 59.00%     |
 ### w/o Dependency Retrieval
 - [🤗`purewhite42/rautoformalizer_nora_deepseek`](https://huggingface.co/purewhite42/rautoformalizer_nora_deepseek): w/o dependency retrieval, SFTed from [🤗`deepseek-ai/deepseek-math-7b-base`](https://huggingface.co/deepseek-ai/deepseek-math-7b-base)
-- [🤗`purewhite42/rautoformalizer_nora_internlm`](https://huggingface.co/purewhite42/rautoformalizer_nora_internlm): w/o dependency retrieval, SFTed from [🤗`internlm/internlm2-math-7b`](https://huggingface.co/internlm/internlm2-math-7b)
+- [🤗`purewhite42/rautoformalizer_nora_internlm`](https://huggingface.co/purewhite42/rautoformalizer_nora_internlm): w/o dependency retrieval, SFTed from [🤗`internlm/internlm2-math-base-7b`](https://huggingface.co/internlm/internlm2-math-base-7b)
 
 ```shell
 python -m autoformalizer.autoformalize_vllm_passk \
@@ -189,7 +189,7 @@ python -m autoformalizer.autoformalize_vllm_passk \
 ```
 ### RAutofromalizer (w/ Dependency Retrieval)
 - [🤗`purewhite42/rautoformalizer_ra_deepseek`](https://huggingface.co/purewhite42/rautoformalizer_ra_deepseek): w/ dependency retrieval (`dependency_retriever_f`), SFTed from [🤗`deepseek-ai/deepseek-math-7b-base`](https://huggingface.co/deepseek-ai/deepseek-math-7b-base)
-- [🤗`purewhite42/rautoformalizer_ra_internlm`](https://huggingface.co/purewhite42/rautoformalizer_ra_internlm): w/ dependency retrieval (`dependency_retriever_f`), SFTed from [🤗`internlm/internlm2-math-7b`](https://huggingface.co/internlm/internlm2-math-7b)
+- [🤗`purewhite42/rautoformalizer_ra_internlm`](https://huggingface.co/purewhite42/rautoformalizer_ra_internlm): w/ dependency retrieval (`dependency_retriever_f`), SFTed from [🤗`internlm/internlm2-math-base-7b`](https://huggingface.co/internlm/internlm2-math-base-7b)
 ```shell
 python -m autoformalizer.autoformalize_vllm_w_ra_passk \
     --port ... \    # Can be arbitrarily set (should avoid conflict)
@@ -208,7 +208,7 @@ python -m autoformalizer.autoformalize_vllm_w_ra_passk \
 ```
 ### Oracle RAutoformalizer (w/ Ground-truth Dependencies)
 - [🤗`purewhite42/rautoformalizer_gtra_deepseek`](https://huggingface.co/purewhite42/rautoformalizer_gtra_deepseek): w/ oracle dependency retrieval, SFTed from [🤗`deepseek-ai/deepseek-math-7b-base`](https://huggingface.co/deepseek-ai/deepseek-math-7b-base)
-- [🤗`purewhite42/rautoformalizer_gtra_internlm`](https://huggingface.co/purewhite42/rautoformalizer_gtra_internlm): w/ oracle dependency retrieval, SFTed from [🤗`internlm/internlm2-math-7b`](https://huggingface.co/internlm/internlm2-math-7b)
+- [🤗`purewhite42/rautoformalizer_gtra_internlm`](https://huggingface.co/purewhite42/rautoformalizer_gtra_internlm): w/ oracle dependency retrieval, SFTed from [🤗`internlm/internlm2-math-base-7b`](https://huggingface.co/internlm/internlm2-math-base-7b)
 ```shell
 python -m autoformalizer.autoformalize_vllm_w_gt_passk \
     --port ... \    # Can be arbitrarily set (should avoid conflict)
