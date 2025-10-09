@@ -4,4 +4,4 @@ git+https://github.com/lean-dojo/LeanDojo.git@78cee9d37aa32e70cdd6119c4af70ae551
 aiofiles~=24.1.0
 fire~=0.7.1
 easydict~=1.13
-dacite==0.0.13
+dacite~=1.9.2
