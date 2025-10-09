@@ -1,14 +1,11 @@
 import Lake
 open Lake DSL
 
-package «my-project» where
+package «rautoformalizer» where
   -- add package configuration options here
 
-lean_lib «MyProject» where
-  -- add library configuration options here
-
 @[default_target]
-lean_exe «my-project» where
+lean_exe «rautoformalizer» where
   root := `Main
 
 require mathlib from git
