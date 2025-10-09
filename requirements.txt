@@ -1,0 +1,7 @@
+xtuner==0.1.23
+git+https://github.com/FlagOpen/FlagEmbedding.git@76080ab83216d6d4156a597b220764a5bda45d92
+git+https://github.com/lean-dojo/LeanDojo.git@78cee9d37aa32e70cdd6119c4af70ae551b8b713
+aiofiles~=24.1.0
+fire~=0.7.1
+easydict~=1.13
+dacite==0.0.13
