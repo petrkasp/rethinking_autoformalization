@@ -17,3 +17,21 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --dataset_root ./data/ \
     --repl_root .lake/packages/REPL \
     --num_concurrency 1
+
+
+export BEQ_LEVEL=basic
+export EQ_BENCHMARK=rautoformalizer-generated
+mkdir -p ./result && \
+cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
+.env/bin/python -m equivalence.beq_${BEQ_LEVEL} \
+    --port 658 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 16 \
+    --num_concurrency 1 \
+    --temperature 0.0
