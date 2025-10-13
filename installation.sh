@@ -8,3 +8,4 @@ elan toolchain install 4.7.0-rc2
 lake update
 lake exe cache get
 lake build
+lake build repl
