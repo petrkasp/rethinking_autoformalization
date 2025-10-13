@@ -15,4 +15,5 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --eval_set proofnet \
     --working_root ./result \
     --dataset_root ./data/ \
-    --repl_root .lake/packages/REPL
+    --repl_root .lake/packages/REPL \
+    --num_concurrency 1
