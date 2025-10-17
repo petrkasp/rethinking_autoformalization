@@ -19,6 +19,7 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --num_concurrency 1
 
 
+export CUDA_VISIBLE_DEVICES=0
 export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
 export BEQ_LEVEL=basic
 export EQ_BENCHMARK=rautoformalizer-generated
@@ -39,6 +40,7 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --model ./internlm2-math-plus-20b
 
 
+export CUDA_VISIBLE_DEVICES=0
 export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
 export BEQ_LEVEL=basic
 export EQ_BENCHMARK=rautoformalizer-generated
