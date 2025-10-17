@@ -8,3 +8,5 @@ lake update
 lake exe cache get
 lake build
 lake build repl
+
+git clone https://huggingface.co/internlm/internlm2-math-plus-20b
