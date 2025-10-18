@@ -1,3 +1,4 @@
+# Identity matching
 export EQ_BENCHMARK=rautoformalizer-generated
 mkdir -p ./result && \
 cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
@@ -7,6 +8,7 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --dataset_root ./data/
 
 
+# Definitional eq
 export EQ_BENCHMARK=rautoformalizer-generated
 mkdir -p ./result && \
 cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
@@ -19,6 +21,7 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --num_concurrency 1
 
 
+# BEq command similar to what is in README.md
 export CUDA_VISIBLE_DEVICES=0
 export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
 export BEQ_LEVEL=basic
@@ -40,6 +43,7 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --model ./internlm2-math-plus-20b
 
 
+# Testing BEq command. It is better to leave out the model parameter entirely.
 export CUDA_VISIBLE_DEVICES=0
 export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
 export BEQ_LEVEL=basic
@@ -59,4 +63,26 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --num_concurrency 1 \
     --temperature 0.0 \
     --model ./Llama-3.2-1B-Instruct
+
+
+# BEq command similar to what is in the paper.
+export CUDA_VISIBLE_DEVICES=0
+export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
+export BEQ_LEVEL=normal
+export EQ_BENCHMARK=rautoformalizer-generated
+mkdir -p ./result && \
+cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
+.env/bin/python -m equivalence.beq_${BEQ_LEVEL} \
+    --port 8080 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 16 \
+    --num_concurrency 1 \
+    --temperature 0.7 \
+    --model ./internlm2-math-plus-20b
 
