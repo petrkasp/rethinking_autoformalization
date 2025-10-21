@@ -1,11 +1,14 @@
+# Requirements specified by authors
 xtuner==0.1.23
 git+https://github.com/FlagOpen/FlagEmbedding.git@76080ab83216d6d4156a597b220764a5bda45d92
 git+https://github.com/lean-dojo/LeanDojo.git@78cee9d37aa32e70cdd6119c4af70ae551b8b713
+# Other inferred requirements
 aiofiles~=24.1.0
-fire~=0.7.1
+fire==0.7.1
 easydict~=1.13
 dacite~=1.9.2
-uvicorn~=0.37.0
-fastapi~=0.119.0
+uvicorn==0.37.0
+fastapi==0.119.0
+# vllm version lower or equal than 0.6.2 is required due to use_beam_search
 vllm==0.6.2
-deepspeed~=0.18.0
+deepspeed==0.18.0
