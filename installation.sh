@@ -10,3 +10,8 @@ lake build
 lake build repl
 
 git clone https://huggingface.co/internlm/internlm2-math-plus-20b
+
+git clone https://huggingface.co/purewhite42/bm25_f
+git clone https://huggingface.co/purewhite42/bm25_f_if
+git clone https://huggingface.co/purewhite42/dependency_retriever_f
+git clone https://huggingface.co/purewhite42/dependency_retriever_f_if

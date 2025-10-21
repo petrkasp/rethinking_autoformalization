@@ -12,3 +12,4 @@ fastapi==0.119.0
 # vllm version lower or equal than 0.6.2 is required due to use_beam_search
 vllm==0.6.2
 deepspeed==0.18.0
+rank-bm25==0.2.2

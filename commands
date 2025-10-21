@@ -86,3 +86,19 @@ cp ./data/human_equivalence/${EQ_BENCHMARK}/autoformalization.json ./result && \
     --temperature 0.7 \
     --model ./internlm2-math-plus-20b
 
+
+# Sparse retrieval
+mkdir -p ./result_bm25_f && \
+.env/bin/python -m retriever.retrieve_bm25 \
+    --model_path ./bm25_f \
+    --save_path ./result_bm25_f \
+    --eval_set proofnet
+
+
+# Dense retrieval
+mkdir -p ./result_dense && \
+.env/bin/python -m retriever.retrieve_dr \
+    --model_path ./dependency_retriever_f \
+    --save_path ./result_dense \
+    --eval_set proofnet
+
