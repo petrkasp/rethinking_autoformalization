@@ -45,7 +45,7 @@ def main(
     logger.debug(f'{len(premises)} Premises available')
 
     model_path = model_path.rstrip('/')
-    if model_path.endswith('f+if'):
+    if model_path.endswith('f+if') or model_path.endswith('f_if'):
         format_doc = format_doc_both
         logger.warning('Using both formal and informal information to format document')
     elif model_path.endswith('f'):
