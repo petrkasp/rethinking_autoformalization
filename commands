@@ -102,3 +102,10 @@ mkdir -p ./result_dense && \
     --save_path ./result_dense \
     --eval_set proofnet
 
+# Dense retrieval with inform, Con-NF
+mkdir -p ./result_dense_inf_con && \
+.env/bin/python -m retriever.retrieve_dr \
+    --model_path ./dependency_retriever_f_if \
+    --save_path ./result_dense_inf_con \
+    --eval_set connf
+
