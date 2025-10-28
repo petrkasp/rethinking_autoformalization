@@ -15,3 +15,7 @@ git clone https://huggingface.co/purewhite42/bm25_f
 git clone https://huggingface.co/purewhite42/bm25_f_if
 git clone https://huggingface.co/purewhite42/dependency_retriever_f
 git clone https://huggingface.co/purewhite42/dependency_retriever_f_if
+
+git clone https://huggingface.co/purewhite42/rautoformalizer_nora_internlm
+git clone https://huggingface.co/purewhite42/rautoformalizer_ra_internlm
+git clone https://huggingface.co/purewhite42/rautoformalizer_gtra_deepseek

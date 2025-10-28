@@ -109,3 +109,66 @@ mkdir -p ./result_dense_inf_con && \
     --save_path ./result_dense_inf_con \
     --eval_set connf
 
+
+## Autoformalization NO retrieval
+export CUDA_VISIBLE_DEVICES=0
+export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
+mkdir -p ./result_af_nora && \
+.env/bin/python -m autoformalizer.autoformalize_vllm_passk \
+    --port 8080 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --model ./rautoformalizer_nora_internlm \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result_af_nora \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 8 \
+    --num_concurrency 1 \
+    --temperature 0.0;
+
+## Autoformalization GROUND-TRUTH retrieval
+export CUDA_VISIBLE_DEVICES=0
+export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
+mkdir -p ./result_af_gtra && \
+.env/bin/python -m autoformalizer.autoformalize_vllm_w_gt_passk \
+    --port 8080 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --model ./rautoformalizer_gtra_deepseek \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result_af_gtra \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 8 \
+    --num_concurrency 1 \
+    --temperature 0.0;
+
+
+## Autoformalization OBSERVED retrieval
+mkdir -p ./result_dense && \
+.env/bin/python -m retriever.retrieve_dr \
+    --model_path ./dependency_retriever_f \
+    --save_path ./result_dense \
+    --eval_set proofnet
+
+export CUDA_VISIBLE_DEVICES=0
+export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
+mkdir -p ./result_af_ra && \
+.env/bin/python -m autoformalizer.autoformalize_vllm_w_ra_passk \
+    --port 8080 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --model ./rautoformalizer_ra_internlm \
+    --retrieval_result_path ./result_dense \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result_af_ra \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 8 \
+    --num_concurrency 1 \
+    --temperature 0.0;
+
