@@ -1,0 +1,33 @@
+# Human Equivalence
+
+## o1
+
+True positives: 23
+False positives: 0
+False negatives: 16
+True negatives: 61
+Accuracy: 0.84
+Precision: 1.0
+Recall: 0.5897435897435898
+F1: 0.7419354838709677
+
+## ra
+
+True positives: 27
+False positives: 0
+False negatives: 4
+True negatives: 69
+Accuracy: 0.96
+Precision: 1.0
+Recall: 0.8709677419354839
+F1: 0.9310344827586207
+
+## Total
+
+True positives: 50
+False positives: 0
+False negatives: 20
+True negatives: 130
+Accuracy: 0.9000
+Precision: 1.0
+Recall: 0.7143
