@@ -1,6 +1,8 @@
 # Human Equivalence
 
-## o1
+## temperature 0.7 (maybe?)
+
+### o1
 
 True positives: 23
 False positives: 0
@@ -11,7 +13,7 @@ Precision: 1.0
 Recall: 0.5897435897435898
 F1: 0.7419354838709677
 
-## ra
+### ra
 
 True positives: 27
 False positives: 0
@@ -22,7 +24,7 @@ Precision: 1.0
 Recall: 0.8709677419354839
 F1: 0.9310344827586207
 
-## Total
+### Total
 
 True positives: 50
 False positives: 0
@@ -31,3 +33,36 @@ True negatives: 130
 Accuracy: 0.9000
 Precision: 1.0
 Recall: 0.7143
+
+## temperature 0.0
+
+### o1
+
+True positives: 23
+False positives: 0
+False negatives: 16
+True negatives: 61
+Accuracy: 0.84
+Precision: 1.0
+Recall: 0.5897435897435898
+F1: 0.7419354838709677
+
+### ra
+True positives: 28
+False positives: 0
+False negatives: 3
+True negatives: 69
+Accuracy: 0.97
+Precision: 1.0
+Recall: 0.9032258064516129
+F1: 0.9491525423728814
+
+### Total
+True positives: 51
+False positives: 0
+False negatives: 19
+True negatives: 130
+Accuracy: 0.9050
+Precision: 1.0
+Recall: 0.7286
+
