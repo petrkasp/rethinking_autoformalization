@@ -3,7 +3,7 @@ python3 -m venv .env
 
 curl https://elan.lean-lang.org/elan-init.sh -sSf | sh
 source $HOME/.elan/env
-elan toolchain install 4.7.0-rc2
+elan toolchain install 4.8.0
 lake update
 lake exe cache get
 lake build
