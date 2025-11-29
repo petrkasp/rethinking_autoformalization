@@ -9,10 +9,10 @@ lean_exe «rautoformalizer» where
   root := `Main
 
 require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git" @ "59fdb6b04d7d16825a54483d550d9572ff473abf"
+  "https://github.com/leanprover-community/mathlib4.git" @ "v4.8.0"
 
 require REPL from git
-  "https://github.com/leanprover-community/repl.git" @ "2ab7948163863ee222891653ac98941fe4f20e87"
+  "https://github.com/leanprover-community/repl.git" @ "v4.8.0"
 
 require «proofNet-lean4» from git
   "https://github.com/rahul3613/ProofNet-lean4.git" @ "60efffb605ee07bf723db4fb8058129a7c8a89bb"
