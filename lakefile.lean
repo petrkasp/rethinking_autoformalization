@@ -20,5 +20,4 @@ require «proofNet-lean4» from git
 require ConNF from git
   "https://github.com/leanprover-community/con-nf.git" @ "16041ae6ea8b9a2ca79952afc7b927ccea18697b"
 
-require «doc-gen4» from git
-  "https://github.com/leanprover/doc-gen4.git" @ "780bbec107cba79d18ec55ac2be3907a77f27f98"
+-- removed doc gen, couldn't get it to work with v4.8.0 and hopefully it's not needed for anything
