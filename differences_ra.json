@@ -1,0 +1,2956 @@
+{
+    "Artin.exercise_13_4_10": {
+        "t0": {
+            "formal_stmt_pred": "theorem thm_Q {p : ℕ } (hp : Nat.Prime p) (hp1 : p ≠ 2) (hr : ∃ (r : ℕ ), p = 2 ^ r + 1) :∃ (k : ℕ ), p = 2 ^ 2 ^ k + 1 := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nh : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "info",
+                                    "pos": "(7, 0)",
+                                    "endPos": "(7, 6)",
+                                    "data": "Try this: exact thm_P hr"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp (Nat.Prime.ne_one hp) h",
+                        "run_result": {
+                            "env": 3,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 2
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 18)",
+                                    "endPos": "(6, 39)",
+                                    "data": "application type mismatch\n  thm_P hp (Nat.Prime.ne_one hp)\nargument\n  Nat.Prime.ne_one hp\nhas type\n  p ≠ 1 : Prop\nbut is expected to have type\n  p ≠ 2 : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='application type mismatch\\n  thm_P hp (Nat.Prime.ne_one hp)\\nargument\\n  Nat.Prime.ne_one hp\\nhas type\\n  p ≠ 1 : Prop\\nbut is expected to have type\\n  p ≠ 2 : Prop', pos=Pos(line=6, column=18), endPos=Pos(line=6, column=39))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp (Nat.Prime.ne_one hp) h",
+                        "run_result": {
+                            "env": 4,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 3
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 15)",
+                                    "endPos": "(6, 36)",
+                                    "data": "application type mismatch\n  thm_P hp (Nat.Prime.ne_one hp)\nargument\n  Nat.Prime.ne_one hp\nhas type\n  p ≠ 1 : Prop\nbut is expected to have type\n  p ≠ 2 : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='application type mismatch\\n  thm_P hp (Nat.Prime.ne_one hp)\\nargument\\n  Nat.Prime.ne_one hp\\nhas type\\n  p ≠ 1 : Prop\\nbut is expected to have type\\n  p ≠ 2 : Prop', pos=Pos(line=6, column=15), endPos=Pos(line=6, column=36))]"
+                    },
+                    {
+                        "equiv_proof": "by_cases hp1 : p = 2",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hp.ne_two h",
+                        "run_result": {
+                            "env": 5,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 4
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 15)",
+                                    "endPos": "(6, 24)",
+                                    "data": "invalid field 'ne_two', the environment does not contain 'Nat.Prime.ne_two'\n  hp\nhas type\n  Nat.Prime p"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 15)",
+                                    "endPos": "(6, 24)",
+                                    "data": "invalid field 'ne_two', the environment does not contain 'Irreducible.ne_two'\n  hp\nhas type\n  Irreducible p"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"invalid field 'ne_two', the environment does not contain 'Nat.Prime.ne_two'\\n  hp\\nhas type\\n  Nat.Prime p\", pos=Pos(line=6, column=15), endPos=Pos(line=6, column=24)), Message(severity='error', data=\"invalid field 'ne_two', the environment does not contain 'Irreducible.ne_two'\\n  hp\\nhas type\\n  Irreducible p\", pos=Pos(line=6, column=15), endPos=Pos(line=6, column=24))]"
+                    },
+                    {
+                        "equiv_proof": "by_cases hp2 : p = 2",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp (Nat.Prime.ne_two hp) h",
+                        "run_result": {
+                            "env": 6,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 5
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 19)",
+                                    "endPos": "(6, 38)",
+                                    "data": "unknown constant 'Nat.Prime.ne_two'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unknown constant 'Nat.Prime.ne_two'\", pos=Pos(line=6, column=19), endPos=Pos(line=6, column=38))]"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hp1 h",
+                        "run_result": {
+                            "env": 7,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 6
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 18)",
+                                    "endPos": "(6, 21)",
+                                    "data": "unknown identifier 'hp1'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unknown identifier 'hp1'\", pos=Pos(line=6, column=18), endPos=Pos(line=6, column=21))]"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hp.ne_two h",
+                        "run_result": {
+                            "env": 8,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 7
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 18)",
+                                    "endPos": "(6, 27)",
+                                    "data": "invalid field 'ne_two', the environment does not contain 'Nat.Prime.ne_two'\n  hp\nhas type\n  Nat.Prime p"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 18)",
+                                    "endPos": "(6, 27)",
+                                    "data": "invalid field 'ne_two', the environment does not contain 'Irreducible.ne_two'\n  hp\nhas type\n  Irreducible p"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"invalid field 'ne_two', the environment does not contain 'Nat.Prime.ne_two'\\n  hp\\nhas type\\n  Nat.Prime p\", pos=Pos(line=6, column=18), endPos=Pos(line=6, column=27)), Message(severity='error', data=\"invalid field 'ne_two', the environment does not contain 'Irreducible.ne_two'\\n  hp\\nhas type\\n  Irreducible p\", pos=Pos(line=6, column=18), endPos=Pos(line=6, column=27))]"
+                    },
+                    {
+                        "equiv_proof": "rcases h with ⟨r, rfl⟩",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "apply @thm_P p hp",
+                        "run_result": {
+                            "env": 9,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 8
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 38)",
+                                    "endPos": "(6, 17)",
+                                    "data": "unsolved goals\ncase hp1\np : ℕ\nhp : Nat.Prime p\nh : ∃ r, p = 2 ^ r + 1\n⊢ p ≠ 2\n\ncase hr\np : ℕ\nhp : Nat.Prime p\nh : ∃ r, p = 2 ^ r + 1\n⊢ ∃ r, p = 2 ^ r + 1"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='unsolved goals\\ncase hp1\\np : ℕ\\nhp : Nat.Prime p\\nh : ∃ r, p = 2 ^ r + 1\\n⊢ p ≠ 2\\n\\ncase hr\\np : ℕ\\nhp : Nat.Prime p\\nh : ∃ r, p = 2 ^ r + 1\\n⊢ ∃ r, p = 2 ^ r + 1', pos=Pos(line=5, column=38), endPos=Pos(line=6, column=17))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hp1 h",
+                        "run_result": {
+                            "env": 10,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 9
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 15)",
+                                    "endPos": "(6, 18)",
+                                    "data": "unknown identifier 'hp1'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unknown identifier 'hp1'\", pos=Pos(line=6, column=15), endPos=Pos(line=6, column=18))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp (Nat.Prime.ne_two hp) h",
+                        "run_result": {
+                            "env": 11,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 126)",
+                                    "endPos": "(1, 131)",
+                                    "goal": "p : ℕ\nhp : Nat.Prime p\nhp1 : p ≠ 2\nhr : ∃ r, p = 2 ^ r + 1\n⊢ ∃ k, p = 2 ^ 2 ^ k + 1",
+                                    "proofState": 10
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 16)",
+                                    "endPos": "(6, 35)",
+                                    "data": "unknown constant 'Nat.Prime.ne_two'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unknown constant 'Nat.Prime.ne_two'\", pos=Pos(line=6, column=16), endPos=Pos(line=6, column=35))]"
+                    },
+                    {
+                        "equiv_proof": "have hp1 := Nat.Prime.ne_one hp",
+                        "exception": "have hp1 := Nat.Prime.ne_one hp"
+                    },
+                    {
+                        "equiv_proof": "rcases h with ⟨r, hr⟩",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "have hp1 : p ≠ 2 := by\n rintro rfl\n norm_num at h",
+                        "exception": ""
+                    }
+                ]
+            }
+        },
+        "v480": {
+            "formal_stmt_pred": "theorem thm_Q {p : ℕ } (hp : Nat.Prime p) (hp1 : p ≠ 2) (hr : ∃ (r : ℕ ), p = 2 ^ r + 1) :∃ (k : ℕ ), p = 2 ^ 2 ^ k + 1 := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "obtain ⟨k, hk⟩ := thm_P hp hr",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "apply thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hp",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ hp hr",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hp hr)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "obtain ⟨r, hr⟩ := hr",
+                        "exception": ""
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp (Nat.Prime.ne_one hp) h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp (Nat.Prime.ne_one hp) h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "by_cases hp1 : p = 2",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hp.ne_two h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp (Nat.Prime.ne_two hp) h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "by_cases hp2 : p = 2",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hp.ne_two h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P p hp hp1 h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hp1 h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "rcases h with ⟨r, rfl⟩",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "apply @thm_P p hp",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp (Nat.Prime.ne_two hp) h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "have hp1 := Nat.Prime.ne_one hp",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "by_cases h2 : p = 2",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "have hp1 : p ≠ 2 := by\n rintro rfl\n norm_num at h",
+                        "exception": ""
+                    }
+                ]
+            }
+        }
+    },
+    "Artin.exercise_6_4_3": {
+        "t0": {
+            "formal_stmt_pred": "theorem thm_Q {G : Type u} [Group G] [Fintype G] {p : ℕ } {q : ℕ } (hp : Prime p) (hq : Prime q) (hG : Fintype.card G = p ^ 2 * q) :¬ IsSimpleGroup G := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : Fintype G\np q : ℕ\nhp : Prime p\nhq : Prime q\nhG : card G = p ^ 2 * q\n⊢ IsSimpleGroup G → False",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(7, 0)",
+                                    "endPos": "(7, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=7, column=0), endPos=Pos(line=7, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hq hG",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : Fintype G\np q : ℕ\nhp : Prime p\nhq : Prime q\nhG : card G = p ^ 2 * q\n⊢ IsSimpleGroup G → False",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 3,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 156)",
+                                    "endPos": "(1, 161)",
+                                    "goal": "G : Type u\ninst✝¹ : Group G\ninst✝ : Fintype G\np q : ℕ\nhp : Prime p\nhq : Prime q\nhG : card G = p ^ 2 * q\n⊢ ¬IsSimpleGroup G",
+                                    "proofState": 2
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hq hG",
+                        "run_result": {
+                            "env": 4,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 156)",
+                                    "endPos": "(1, 161)",
+                                    "goal": "G : Type u\ninst✝¹ : Group G\ninst✝ : Fintype G\np q : ℕ\nhp : Prime p\nhq : Prime q\nhG : card G = p ^ 2 * q\n⊢ ¬IsSimpleGroup G",
+                                    "proofState": 3
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "v480": {
+            "formal_stmt_pred": "theorem thm_Q {G : Type u} [Group G] [Fintype G] {p : ℕ } {q : ℕ } (hp : Prime p) (hq : Prime q) (hG : Fintype.card G = p ^ 2 * q) :¬ IsSimpleGroup G := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ p q hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hp hq hG)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "intro h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "haveI : Fact p.Prime := ⟨hp⟩",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply @thm_P G _ _ p q hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "intro h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ p q hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hp hq hG)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "contrapose!",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "intro hG'",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "intro H",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ _ _ _ _ hp hq hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hp hq",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact fun h => thm_P hp hq hG h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            }
+        }
+    },
+    "Artin.exercise_6_4_12": {
+        "t0": {
+            "formal_stmt_pred": "theorem thm_Q {G : Type u_1} [Group G] [Fintype G] (hG : Fintype.card G = 224) :¬ IsSimpleGroup G := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : Fintype G\nhG : card G = 224\n⊢ IsSimpleGroup G → False",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(7, 0)",
+                                    "endPos": "(7, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=7, column=0), endPos=Pos(line=7, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : Fintype G\nhG : card G = 224\n⊢ IsSimpleGroup G → False",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 3,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 104)",
+                                    "endPos": "(1, 109)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : Fintype G\nhG : card G = 224\n⊢ ¬IsSimpleGroup G",
+                                    "proofState": 2
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "run_result": {
+                            "env": 4,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 104)",
+                                    "endPos": "(1, 109)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : Fintype G\nhG : card G = 224\n⊢ ¬IsSimpleGroup G",
+                                    "proofState": 3
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "v480": {
+            "formal_stmt_pred": "theorem thm_Q {G : Type u_1} [Group G] [Fintype G] (hG : Fintype.card G = 224) :¬ IsSimpleGroup G := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hG)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "haveI : Fact (Fintype.card G = 224) := ⟨hG⟩",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "haveI := Fintype.ofFinite G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "intro h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact fun h ↦ thm_P hG h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hG)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact fun h => thm_P hG h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "intro h",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hG).elim",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "haveI := Fintype.ofFinite G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact fun h => @thm_P G _ _ h hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            }
+        }
+    },
+    "Herstein.exercise_4_2_5": {
+        "t0": {
+            "formal_stmt_pred": "theorem thm_Q {R : Type u_1} [Ring R] (h : ∀ (x : R), x ^ 3 = x) (x : R) (y : R) :x * y = y * x := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "haveI := thm_P h",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 99)",
+                                    "endPos": "(6, 16)",
+                                    "data": "unsolved goals\nR : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\nthis : CommRing R\n⊢ x * y = y * x"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='unsolved goals\\nR : Type u_1\\ninst✝ : Ring R\\nh : ∀ (x : R), x ^ 3 = x\\nx y : R\\nthis : CommRing R\\n⊢ x * y = y * x', pos=Pos(line=5, column=99), endPos=Pos(line=6, column=16))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).mul_comm x y",
+                        "run_result": {
+                            "env": 3,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 2
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 28)",
+                                    "data": "type mismatch\n  CommRing.mul_comm x y\nhas type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\nbut is expected to have type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  CommRing.mul_comm x y\\nhas type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\\nbut is expected to have type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=28))]"
+                    },
+                    {
+                        "equiv_proof": "exact mul_comm x y",
+                        "exception": "exact mul_comm x y"
+                    },
+                    {
+                        "equiv_proof": "exact @CommRing.mul_comm R (@thm_P R _ h) x y",
+                        "run_result": {
+                            "env": 5,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 4
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 45)",
+                                    "data": "type mismatch\n  CommRing.mul_comm x y\nhas type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\nbut is expected to have type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  CommRing.mul_comm x y\\nhas type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\\nbut is expected to have type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=45))]"
+                    },
+                    {
+                        "equiv_proof": "haveI : CommRing R := thm_P h",
+                        "run_result": {
+                            "env": 6,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 5
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 99)",
+                                    "endPos": "(6, 29)",
+                                    "data": "unsolved goals\nR : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\nthis : CommRing R\n⊢ x * y = y * x"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='unsolved goals\\nR : Type u_1\\ninst✝ : Ring R\\nh : ∀ (x : R), x ^ 3 = x\\nx y : R\\nthis : CommRing R\\n⊢ x * y = y * x', pos=Pos(line=5, column=99), endPos=Pos(line=6, column=29))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).mul_comm x y",
+                        "run_result": {
+                            "env": 7,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 6
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 28)",
+                                    "data": "type mismatch\n  CommRing.mul_comm x y\nhas type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\nbut is expected to have type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  CommRing.mul_comm x y\\nhas type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\\nbut is expected to have type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=28))]"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P R _ h x y",
+                        "run_result": {
+                            "env": 8,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 7
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 6)",
+                                    "endPos": "(6, 22)",
+                                    "data": "function expected at\n  thm_P h\nterm has type\n  CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='function expected at\\n  thm_P h\\nterm has type\\n  CommRing R', pos=Pos(line=6, column=6), endPos=Pos(line=6, column=22))]"
+                    },
+                    {
+                        "equiv_proof": "haveI := @thm_P R _ h",
+                        "run_result": {
+                            "env": 9,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 8
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 99)",
+                                    "endPos": "(6, 21)",
+                                    "data": "unsolved goals\nR : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\nthis : CommRing R\n⊢ x * y = y * x"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='unsolved goals\\nR : Type u_1\\ninst✝ : Ring R\\nh : ∀ (x : R), x ^ 3 = x\\nx y : R\\nthis : CommRing R\\n⊢ x * y = y * x', pos=Pos(line=5, column=99), endPos=Pos(line=6, column=21))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).commRing.mul_comm x y",
+                        "run_result": {
+                            "env": 10,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 9
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 6)",
+                                    "endPos": "(6, 37)",
+                                    "data": "invalid field 'commRing', the environment does not contain 'CommRing.commRing'\n  thm_P h\nhas type\n  CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"invalid field 'commRing', the environment does not contain 'CommRing.commRing'\\n  thm_P h\\nhas type\\n  CommRing R\", pos=Pos(line=6, column=6), endPos=Pos(line=6, column=37))]"
+                    },
+                    {
+                        "equiv_proof": "rw [← sub_eq_zero]",
+                        "exception": "rw [← sub_eq_zero]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P h",
+                        "run_result": {
+                            "env": 12,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 11
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 13)",
+                                    "data": "type mismatch\n  thm_P h\nhas type\n  CommRing R : Type u_1\nbut is expected to have type\n  x * y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  thm_P h\\nhas type\\n  CommRing R : Type u_1\\nbut is expected to have type\\n  x * y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=13))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).comm",
+                        "run_result": {
+                            "env": 13,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 12
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 6)",
+                                    "endPos": "(6, 20)",
+                                    "data": "invalid field 'comm', the environment does not contain 'CommRing.comm'\n  thm_P h\nhas type\n  CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"invalid field 'comm', the environment does not contain 'CommRing.comm'\\n  thm_P h\\nhas type\\n  CommRing R\", pos=Pos(line=6, column=6), endPos=Pos(line=6, column=20))]"
+                    },
+                    {
+                        "equiv_proof": "exact @CommRing.mul_comm R (thm_P h) x y",
+                        "run_result": {
+                            "env": 14,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 13
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 40)",
+                                    "data": "type mismatch\n  CommRing.mul_comm x y\nhas type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\nbut is expected to have type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  CommRing.mul_comm x y\\nhas type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\\nbut is expected to have type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=40))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).comm x y",
+                        "run_result": {
+                            "env": 15,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 14
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 6)",
+                                    "endPos": "(6, 24)",
+                                    "data": "invalid field 'comm', the environment does not contain 'CommRing.comm'\n  thm_P h\nhas type\n  CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"invalid field 'comm', the environment does not contain 'CommRing.comm'\\n  thm_P h\\nhas type\\n  CommRing R\", pos=Pos(line=6, column=6), endPos=Pos(line=6, column=24))]"
+                    },
+                    {
+                        "equiv_proof": "exact @CommRing.mul_comm _ (thm_P h) x y",
+                        "run_result": {
+                            "env": 16,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 15
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 40)",
+                                    "data": "type mismatch\n  CommRing.mul_comm x y\nhas type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\nbut is expected to have type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  CommRing.mul_comm x y\\nhas type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\\nbut is expected to have type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=40))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).mul_comm x y",
+                        "run_result": {
+                            "env": 17,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 16
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 28)",
+                                    "data": "type mismatch\n  CommRing.mul_comm x y\nhas type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\nbut is expected to have type\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  CommRing.mul_comm x y\\nhas type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocSemiring.toMul) x y = y * x : Prop\\nbut is expected to have type\\n  @HMul.hMul R R R (@instHMul R NonUnitalNonAssocRing.toMul) x y = y * x : Prop', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=28))]"
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 18,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 17
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 0)",
+                                    "endPos": "(5, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=5, column=0), endPos=Pos(line=5, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "constructor",
+                        "exception": "constructor"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := thm_P h }",
+                        "run_result": {
+                            "env": 20,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 19
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "v480": {
+            "formal_stmt_pred": "theorem thm_Q {R : Type u_1} [Ring R] (h : ∀ (x : R), x ^ 3 = x) (x : R) (y : R) :x * y = y * x := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=6, column=0), endPos=Pos(line=6, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "haveI := thm_P h",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 9)",
+                                    "endPos": "(6, 14)",
+                                    "data": "unknown identifier 'thm_P'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 99)",
+                                    "endPos": "(6, 16)",
+                                    "data": "unsolved goals\nR : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=9), endPos=Pos(line=6, column=14)), Message(severity='error', data='unsolved goals\\nR : Type u_1\\ninst✝ : Ring R\\nh : ∀ (x : R), x ^ 3 = x\\nx y : R\\n⊢ x * y = y * x', pos=Pos(line=5, column=99), endPos=Pos(line=6, column=16))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).mul_comm x y",
+                        "run_result": {
+                            "env": 3,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 2
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "equiv_proof": "haveI : CommRing R := thm_P h",
+                        "run_result": {
+                            "env": 4,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 3
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 22)",
+                                    "endPos": "(6, 27)",
+                                    "data": "unknown identifier 'thm_P'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 99)",
+                                    "endPos": "(6, 29)",
+                                    "data": "unsolved goals\nR : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\nthis : CommRing R\n⊢ x * y = y * x"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=22), endPos=Pos(line=6, column=27)), Message(severity='error', data='unsolved goals\\nR : Type u_1\\ninst✝ : Ring R\\nh : ∀ (x : R), x ^ 3 = x\\nx y : R\\nthis : CommRing R\\n⊢ x * y = y * x', pos=Pos(line=5, column=99), endPos=Pos(line=6, column=29))]"
+                    },
+                    {
+                        "equiv_proof": "exact mul_comm x y",
+                        "exception": "exact mul_comm x y"
+                    },
+                    {
+                        "equiv_proof": "haveI := @thm_P R _ h",
+                        "run_result": {
+                            "env": 6,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 5
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 10)",
+                                    "endPos": "(6, 15)",
+                                    "data": "unknown identifier 'thm_P'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 99)",
+                                    "endPos": "(6, 21)",
+                                    "data": "unsolved goals\nR : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=10), endPos=Pos(line=6, column=15)), Message(severity='error', data='unsolved goals\\nR : Type u_1\\ninst✝ : Ring R\\nh : ∀ (x : R), x ^ 3 = x\\nx y : R\\n⊢ x * y = y * x', pos=Pos(line=5, column=99), endPos=Pos(line=6, column=21))]"
+                    },
+                    {
+                        "equiv_proof": "exact @CommRing.mul_comm R (@thm_P R _ h) x y",
+                        "run_result": {
+                            "env": 7,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 6
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 29)",
+                                    "endPos": "(6, 34)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=29), endPos=Pos(line=6, column=34))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).mul_comm x y",
+                        "run_result": {
+                            "env": 8,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 7
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P R _ h x y",
+                        "run_result": {
+                            "env": 9,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 8
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).commRing.mul_comm x y",
+                        "run_result": {
+                            "env": 10,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 9
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "equiv_proof": "rw [← sub_eq_zero]",
+                        "exception": "rw [← sub_eq_zero]"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P h",
+                        "run_result": {
+                            "env": 12,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 11
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 6)",
+                                    "endPos": "(6, 11)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=6), endPos=Pos(line=6, column=11))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).comm",
+                        "run_result": {
+                            "env": 13,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 12
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "equiv_proof": "exact @CommRing.mul_comm R (thm_P h) x y",
+                        "run_result": {
+                            "env": 14,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 13
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 28)",
+                                    "endPos": "(6, 33)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=28), endPos=Pos(line=6, column=33))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).comm x y",
+                        "run_result": {
+                            "env": 15,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 14
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P h).mul_comm x y",
+                        "run_result": {
+                            "env": 16,
+                            "sorries": [
+                                {
+                                    "pos": "(3, 0)",
+                                    "endPos": "(3, 5)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\n⊢ CommRing R",
+                                    "proofState": 15
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "error",
+                                    "pos": "(1, 0)",
+                                    "endPos": "(3, 5)",
+                                    "data": "type of theorem 'thm_P' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(6, 7)",
+                                    "endPos": "(6, 12)",
+                                    "data": "unknown identifier 'thm_P'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='error', data=\"type of theorem 'thm_P' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=1, column=0), endPos=Pos(line=3, column=5)), Message(severity='error', data=\"unknown identifier 'thm_P'\", pos=Pos(line=6, column=7), endPos=Pos(line=6, column=12))]"
+                    },
+                    {
+                        "exception": ""
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 17,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 16
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 0)",
+                                    "endPos": "(5, 6)",
+                                    "data": "`exact?` could not close the goal. Try `apply?` to see partial suggestions."
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 6)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='`exact?` could not close the goal. Try `apply?` to see partial suggestions.', pos=Pos(line=5, column=0), endPos=Pos(line=5, column=6)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=6))]"
+                    },
+                    {
+                        "equiv_proof": "constructor",
+                        "exception": "constructor"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := thm_P h }",
+                        "run_result": {
+                            "env": 19,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 18
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 29)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=29))]"
+                    },
+                    {
+                        "equiv_proof": "exact ⟨thm_P h⟩",
+                        "run_result": {
+                            "env": 20,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 19
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 15)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=15))]"
+                    },
+                    {
+                        "equiv_proof": "exact ⟨h⟩",
+                        "exception": "exact ⟨h⟩"
+                    },
+                    {
+                        "equiv_proof": "exact { thm_P h with }",
+                        "run_result": {
+                            "env": 22,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 21
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 6)",
+                                    "endPos": "(5, 22)",
+                                    "data": "expected structure"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 22)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='expected structure', pos=Pos(line=5, column=6), endPos=Pos(line=5, column=22)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=22))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := fun x y => thm_P h x y }",
+                        "run_result": {
+                            "env": 23,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 22
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 44)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=44))]"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P R _ h",
+                        "run_result": {
+                            "env": 24,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 23
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 0)",
+                                    "endPos": "(5, 18)",
+                                    "data": "type mismatch\n  thm_P h\nhas type\n  ∀ (x y : R), x * y = y * x : Prop\nbut is expected to have type\n  CommRing R : Type u_1"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 18)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data='type mismatch\\n  thm_P h\\nhas type\\n  ∀ (x y : R), x * y = y * x : Prop\\nbut is expected to have type\\n  CommRing R : Type u_1', pos=Pos(line=5, column=0), endPos=Pos(line=5, column=18)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=18))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := thm_P h }",
+                        "run_result": {
+                            "env": 25,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 24
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 29)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=29))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := fun x y ↦ thm_P h x y }",
+                        "run_result": {
+                            "env": 26,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 25
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 43)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=43))]"
+                    },
+                    {
+                        "equiv_proof": "exact ⟨fun x y ↦ thm_P h x y⟩",
+                        "run_result": {
+                            "env": 27,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 26
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 29)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=29))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := fun x y => thm_P h x y }",
+                        "run_result": {
+                            "env": 28,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 27
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 44)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=44))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := thm_P h .. (by infer_instance : Ring R) }",
+                        "run_result": {
+                            "env": 29,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 28
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 28)",
+                                    "endPos": "(5, 30)",
+                                    "data": "unexpected '..'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 61)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unexpected '..'\", pos=Pos(line=5, column=28), endPos=Pos(line=5, column=30)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=61))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := thm_P h .. ‹_› }",
+                        "run_result": {
+                            "env": 30,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 29
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 28)",
+                                    "endPos": "(5, 30)",
+                                    "data": "unexpected '..'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 36)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unexpected '..'\", pos=Pos(line=5, column=28), endPos=Pos(line=5, column=30)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=36))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := thm_P h .. ‹Ring R› }",
+                        "run_result": {
+                            "env": 31,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 30
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 28)",
+                                    "endPos": "(5, 30)",
+                                    "data": "unexpected '..'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 41)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unexpected '..'\", pos=Pos(line=5, column=28), endPos=Pos(line=5, column=30)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=41))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := fun x y => thm_P h x y .. (by infer_instance : Ring R) }",
+                        "run_result": {
+                            "env": 32,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 31
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 43)",
+                                    "endPos": "(5, 45)",
+                                    "data": "unexpected '..'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(3, 0)",
+                                    "endPos": "(5, 76)",
+                                    "data": "type of theorem 'thm_Q' is not a proposition\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unexpected '..'\", pos=Pos(line=5, column=43), endPos=Pos(line=5, column=45)), Message(severity='error', data=\"type of theorem 'thm_Q' is not a proposition\\n  {R : Type u_1} → [inst : Ring R] → (∀ (x : R), x ^ 3 = x) → CommRing R\", pos=Pos(line=3, column=0), endPos=Pos(line=5, column=76))]"
+                    },
+                    {
+                        "equiv_proof": "exact { mul_comm := fun x y => thm_P h x y with }",
+                        "run_result": {
+                            "env": 33,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 102)",
+                                    "endPos": "(1, 107)",
+                                    "goal": "R : Type u_1\ninst✝ : Ring R\nh : ∀ (x : R), x ^ 3 = x\nx y : R\n⊢ x * y = y * x",
+                                    "proofState": 32
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "error",
+                                    "pos": "(5, 42)",
+                                    "endPos": "(5, 47)",
+                                    "data": "unexpected token 'with'; expected '}'"
+                                }
+                            ]
+                        },
+                        "exception": "[Message(severity='warning', data=\"declaration uses 'sorry'\", pos=Pos(line=1, column=8), endPos=Pos(line=1, column=13)), Message(severity='error', data=\"unexpected token 'with'; expected '}'\", pos=Pos(line=5, column=42), endPos=Pos(line=5, column=47))]"
+                    }
+                ]
+            }
+        }
+    },
+    "Artin.exercise_6_1_14": {
+        "t0": {
+            "formal_stmt_pred": "theorem thm_Q {G : Type u_1} [Group G] [IsCyclic (G ⧸ Subgroup.center G)] :Subgroup.center G = ⊤ := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "G : Type u_1\ninst✝ : Group G\nhG : IsCyclic (G ⧸ center G)\n⊢ center G = ⊤",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "info",
+                                    "pos": "(7, 0)",
+                                    "endPos": "(7, 6)",
+                                    "data": "Try this: exact thm_P G inst✝"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 103)",
+                                    "endPos": "(1, 108)",
+                                    "goal": "G : Type u_1\ninst✝¹ : Group G\ninst✝ : IsCyclic (G ⧸ center G)\n⊢ center G = ⊤",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "info",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "Try this: exact thm_P"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "v480": {
+            "formal_stmt_pred": "theorem thm_Q {G : Type u_1} [Group G] [IsCyclic (G ⧸ Subgroup.center G)] :Subgroup.center G = ⊤ := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P _",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ _",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P _ _",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ ‹_›",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P G",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P G)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P G _",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hG)",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hG",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            }
+        }
+    },
+    "Munkres.exercise_28_6": {
+        "t0": {
+            "formal_stmt_pred": "theorem thm_Q {X : Type u_1} [MetricSpace X] {f : X → X} (hf : Isometry f) [CompactSpace X] :Function.Bijective f := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 1,
+                            "sorries": [
+                                {
+                                    "pos": "(4, 0)",
+                                    "endPos": "(4, 5)",
+                                    "goal": "X : Type u_1\ninst✝¹ : MetricSpace X\ninst✝ : CompactSpace X\nf : X → X\nhf : Isometry f\n⊢ Function.Bijective f",
+                                    "proofState": 0
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "info",
+                                    "pos": "(7, 0)",
+                                    "endPos": "(7, 6)",
+                                    "data": "Try this: exact thm_P hf"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": true,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "run_result": {
+                            "env": 2,
+                            "sorries": [
+                                {
+                                    "pos": "(1, 120)",
+                                    "endPos": "(1, 125)",
+                                    "goal": "X : Type u_1\ninst✝¹ : MetricSpace X\nf : X → X\nhf : Isometry f\ninst✝ : CompactSpace X\n⊢ Function.Bijective f",
+                                    "proofState": 1
+                                }
+                            ],
+                            "messages": [
+                                {
+                                    "severity": "warning",
+                                    "pos": "(1, 8)",
+                                    "endPos": "(1, 13)",
+                                    "data": "declaration uses 'sorry'"
+                                },
+                                {
+                                    "severity": "info",
+                                    "pos": "(6, 0)",
+                                    "endPos": "(6, 6)",
+                                    "data": "Try this: exact thm_P hf"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "v480": {
+            "formal_stmt_pred": "theorem thm_Q {X : Type u_1} [MetricSpace X] {f : X → X} (hf : Isometry f) [CompactSpace X] :Function.Bijective f := by sorry",
+            "typecheck_result": {
+                "is_success": true
+            },
+            "equivcheck_results_PQ": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P X _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P X _ _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P X _ _ f hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact hf.bijective",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            },
+            "equivcheck_results_QP": {
+                "is_success": false,
+                "result": [
+                    {
+                        "equiv_proof": "exact?",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "apply thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P X _ _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P X _ _ f hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hf).bijective",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "exception": "list index out of range"
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "",
+                        "exception": ""
+                    },
+                    {
+                        "equiv_proof": "exact @thm_P _ _ _ _ hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact (thm_P hf).1",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact thm_P hf",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    },
+                    {
+                        "equiv_proof": "exact hf.bijective",
+                        "exception": "'LeanError' object has no attribute 'env'"
+                    }
+                ]
+            }
+        }
+    }
+}
