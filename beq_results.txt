@@ -73,30 +73,30 @@ Recall: 0.7286
 
 ### o1
 
-True positives: 20
+True positives: 21
 False positives: 0
-False negatives: 19
+False negatives: 18
 True negatives: 61
-Accuracy: 0.81
+Accuracy: 0.82
 Precision: 1.0
-Recall: 0.5128205128205128
-F1: 0.6779661016949152
+Recall: 0.5384615384615384
+F1: 0.7
 
 ### ra
-True positives: 24
+True positives: 28
 False positives: 0
-False negatives: 7
+False negatives: 3
 True negatives: 69
-Accuracy: 0.93
+Accuracy: 0.97
 Precision: 1.0
-Recall: 0.7741935483870968
-F1: 0.8727272727272727
+Recall: 0.9032258064516129
+F1: 0.9491525423728814
 
 ### Total
-True positives: 44
+True positives: 49
 False positives: 0
-False negatives: 26
+False negatives: 21
 True negatives: 130
-Accuracy: 0.87
+Accuracy: 0.8950
 Precision: 1.0
-Recall: 0.6286
+Recall: 0.7000
