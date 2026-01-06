@@ -100,3 +100,14 @@ True negatives: 130
 Accuracy: 0.8950
 Precision: 1.0
 Recall: 0.7000
+
+# Proofnet verif
+
+True positives: 483
+False positives: 4
+False negatives: 659
+True negatives: 2606
+Accuracy: 0.8232942430703625
+Precision: 0.9917864476386037
+Recall: 0.42294220665499127
+F1: 0.5930018416206262
