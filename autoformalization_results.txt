@@ -1,0 +1,11 @@
+NORA - Proofnet - InterLM
+BEq@8: 0.16310160427807488
+BEq@8: 61/374
+
+RA - Proofnet - InterLM
+BEq@8: 0.1925133689839572
+BEq@8: 72/374
+
+GTRA - Proofnet - DeepSeekMath
+BEq@8: 0.32620320855614976
+BEq@8: 122/374
