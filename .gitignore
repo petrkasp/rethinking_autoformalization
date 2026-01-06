@@ -173,3 +173,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+.vscode
+.lake
+lake-manifest.json
+data/proofnetverif
+data/proofnetverif_small
