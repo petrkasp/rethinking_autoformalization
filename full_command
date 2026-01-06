@@ -1,0 +1,34 @@
+export CUDA_VISIBLE_DEVICES=0
+export VLLM_ALLOW_DEPRECATED_BEAM_SEARCH=1
+.env/bin/python -m wait_mathlib_load
+mkdir -p ./result_af_gtra && \
+.env/bin/python -m autoformalizer.autoformalize_vllm_w_gt_passk \
+    --port 8079 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --model ./rautoformalizer_gtra_deepseek \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result_af_gtra \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 8 \
+    --num_concurrency 1 \
+    --temperature 0.0;
+
+.env/bin/python -m equivalence.beq_normal \
+    --port 8079 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --model ./internlm2-math-plus-20b \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result_af_gtra \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 8 \
+    --num_concurrency 1 \
+    --temperature 0.0;
+
+echo Exiting in 30 second
+sleep 30 && exit
