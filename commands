@@ -151,3 +151,19 @@ mkdir -p ./result_af_ra && \
     --num_concurrency 1 \
     --temperature 0.0;
 
+## Verification
+.env/bin/python -m equivalence.beq_normal \
+    --port 8080 \
+    --trust-remote-code \
+    --enable-prefix-caching \
+    --model ./internlm2-math-plus-20b \
+    --mathlib_root ./ \
+    --eval_set proofnet \
+    --working_root ./result_af_nora \
+    --dataset_root ./data/ \
+    --repl_root .lake/packages/REPL \
+    --try_num 8 \
+    --num_concurrency 1 \
+    --temperature 0.0
+
+.env/bin/python -m wait_mathlib_load
