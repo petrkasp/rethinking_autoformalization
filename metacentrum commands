@@ -6,3 +6,10 @@ module add python/3.10.4-gcc-8.3.0-ovkjwzd
 
 
 qsub -l select=1:ncpus=1:ngpus=1:mem=16gb:scratch_local=16gb -I
+
+qsub -l select=1:ncpus=1:ngpus=1:mem=16gb:scratch_local=16gb:gpu_mem=40gb:brno=True -I
+qsub -l select=1:ncpus=4:ngpus=1:mem=64gb:scratch_local=16gb:gpu_mem=40gb:brno=True -I
+
+qsub -l select=1:ncpus=2:mem=32gb:scratch_local=16gb:cl_galdor=True -I
+
+export IGNOREEOF=2
