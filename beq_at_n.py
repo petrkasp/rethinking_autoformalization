@@ -18,11 +18,14 @@ def has_key(key, dct):
     return False
 
 
-def main(path):
+def main(path, n):
     with open(path, 'r') as f:
         results = json.load(f)
 
-    # BEq@8, at least one correct
+    if n is None:
+        n = len(list(results.values())[0])
+
+    # BEq@N, at least one correct
     beq_total = 0
     beq_plus_total = 0
 
@@ -30,7 +33,7 @@ def main(path):
         beq_correct = False
         beq_plus_correct = False
 
-        for prediction in results[key]:
+        for prediction in results[key][:n]:
             if beq_success(prediction):
                 beq_correct = True
             if beq_plus_success(prediction):
@@ -42,18 +45,19 @@ def main(path):
             beq_plus_total += 1
 
     if has_key("equivcheck_results_PQ", results):
-        print ("BEq@8:", beq_total / len(results))
-        print ("BEq@8:", f"{beq_total}/{len(results)}")
+        print (f"BEq@{n}:", beq_total / len(results))
+        print (f"BEq@{n}:", f"{beq_total}/{len(results)}")
 
     if has_key("beq_plus", results):
-        print ("BEq+@8:", beq_plus_total / len(results))
-        print ("BEq+@8:", f"{beq_plus_total}/{len(results)}")
+        print (f"BEq+@{n}:", beq_plus_total / len(results))
+        print (f"BEq+@{n}:", f"{beq_plus_total}/{len(results)}")
 
 
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("path", type=str, help="Path to results file")
+    parser.add_argument("--n", type=int, help="@N. Number of samples to consider", default=None)
     args = parser.parse_args()
 
-    main(args.path)
+    main(args.path, args.n)
