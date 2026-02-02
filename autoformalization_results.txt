@@ -26,6 +26,15 @@ BEq+@1: 50/374
 BEq+@8: 0.20855614973262032
 BEq+@8: 78/374
 
+RA - Proofnet - Apriel
+# Run local
+BEq+@1: 0.0374331550802139
+BEq+@1: 14/374
+
+# Run API
+BEq+@1: 0.05614973262032086
+BEq+@1: 21/374
+
 GTRA - Proofnet - DeepSeekMath
 BEq+@1: 0.22727272727272727
 BEq+@1: 85/374

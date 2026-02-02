@@ -15,6 +15,12 @@ def load_dataset(dataset_path):
     return {p["full_name"]: p for p in proofnet}
 
 
+def get_typecheck(json):
+    if "typecheck_result" not in json or "is_success" not in json["typecheck_result"]:
+        return None
+    return json["typecheck_result"]["is_success"]
+
+
 def main(dataset_path, autoformalization_path, output_path):
     repl_config = LeanREPLConfig(project=TempRequireProject(lean_version="v4.8.0", require="mathlib"), verbose=True)
     server = AutoLeanServer(config=repl_config)
@@ -33,16 +39,17 @@ def main(dataset_path, autoformalization_path, output_path):
         header = dataset[key]["header"]
         reference = dataset[key]["formal_stmt"] 
         PREDICTION_KEY = "formal_stmt_pred"
-        GET_TYPECHECK = lambda json: json["typecheck_result"]["is_success"]
 
         for prediction_json in results[key]:
             if PREDICTION_KEY not in prediction_json:
                 # print(f"{key} is missing an autoformalization.")
                 continue
             prediction = prediction_json[PREDICTION_KEY]
-            typecheck = GET_TYPECHECK(prediction_json)
+            if not prediction:
+                continue
+            typecheck = get_typecheck(prediction_json)
 
-            if not typecheck:
+            if typecheck == False: # typecheck can be None
                 continue
 
             beq_result = beq_plus(
