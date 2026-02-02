@@ -10,6 +10,12 @@ def beq_plus_success(prediction):
     return "beq_plus" in prediction and prediction["beq_plus"]
 
 
+def typecheck_success(prediction):
+    if "typecheck_result" not in prediction or "is_success" not in prediction["typecheck_result"]:
+        return False
+    return prediction["typecheck_result"]["is_success"]
+
+
 def has_key(key, dct):
     for exercise in dct.values():
         for prediction in exercise:
@@ -28,21 +34,27 @@ def main(path, n):
     # BEq@N, at least one correct
     beq_total = 0
     beq_plus_total = 0
+    typecheck_total = 0
 
     for key in results:
         beq_correct = False
         beq_plus_correct = False
+        typecheck_correct = False
 
         for prediction in results[key][:n]:
             if beq_success(prediction):
                 beq_correct = True
             if beq_plus_success(prediction):
                 beq_plus_correct = True
+            if typecheck_success(prediction):
+                typecheck_correct = True
 
         if beq_correct:
             beq_total += 1
         if beq_plus_correct:
             beq_plus_total += 1
+        if typecheck_correct:
+            typecheck_total += 1
 
     if has_key("equivcheck_results_PQ", results):
         print (f"BEq@{n}:", beq_total / len(results))
@@ -51,6 +63,10 @@ def main(path, n):
     if has_key("beq_plus", results):
         print (f"BEq+@{n}:", beq_plus_total / len(results))
         print (f"BEq+@{n}:", f"{beq_plus_total}/{len(results)}")
+
+    if has_key("typecheck_result", results):
+        print (f"Typecheck@{n}:", typecheck_total / len(results))
+        print (f"Typecheck@{n}:", f"{typecheck_total}/{len(results)}")
 
 
 if __name__ == '__main__':
