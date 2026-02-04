@@ -78,11 +78,8 @@ def main(dataset_path, autoformalization_path, output_path):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    PATH = lambda split: f"results/v470/result_af_{split}/autoformalization.json"
+    parser.add_argument("autoformalization", type=str, help="Path to autoformalization.json")
     parser.add_argument("--dataset", type=str, required=True, help="Either 'proofnet', 'connf', or path to benchmark.jsonl")
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument("--autoformalization", type=str, help="Path to autoformalization.json")
-    group.add_argument("--split", type=str, help="Either 'nora', 'ra', or 'gtra'")
     parser.add_argument("--output", type=str, help="Path to output file")
     args = parser.parse_args()
 
@@ -90,9 +87,6 @@ if __name__ == '__main__':
         "proofnet": "data/proofnet/benchmark.jsonl",
         "connf": "data/connf/benchmark.jsonl",
     }.get(args.dataset, args.dataset)
-
-    if args.split:
-        args.autoformalization = PATH(args.split)
 
     if not args.output:
         args.output = os.path.join(os.path.dirname(args.autoformalization), "beq_plus.json")
