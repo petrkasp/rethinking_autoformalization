@@ -47,6 +47,19 @@ Typecheck@1: 46/374
 BEq+@1: 0.05614973262032086
 BEq+@1: 21/374
 
+# Header in the prompt
+Typecheck@1: 0.11497326203208556
+Typecheck@1: 43/374
+BEq+@1: 0.034759358288770054
+BEq+@1: 13/374
+
+# Loop (API)
+Typecheck@1: 0.24331550802139038
+Typecheck@1: 91/374
+Turns: 50, 23, 18
+BEq+@1: 0.0748663101604278
+BEq+@1: 28/374
+
 GTRA - Proofnet - DeepSeekMath
 BEq+@1: 0.22727272727272727
 BEq+@1: 85/374
