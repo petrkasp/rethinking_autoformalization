@@ -27,7 +27,10 @@ def has_key(key, dct):
 def main(path, n):
     with open(path, 'r') as f:
         results = json.load(f)
+    calculate_results(results, n)
 
+
+def calculate_results(results, n):
     if n is None:
         n = len(list(results.values())[0])
 

@@ -53,6 +53,10 @@ Typecheck@1: 43/374
 BEq+@1: 0.034759358288770054
 BEq+@1: 13/374
 
+# (API, Local, Header)
+BEq+@3: 0.08021390374331551
+BEq+@3: 30/374
+
 # Loop (API)
 Typecheck@1: 0.24331550802139038
 Typecheck@1: 91/374
